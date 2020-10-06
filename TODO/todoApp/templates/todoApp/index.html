@@ -1,0 +1,24 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'todoApp/style.css' %}" />
+<div class="task-group">
+  <div class="task-container">
+    <div class="todoApp">
+      <form action="/" method="POST">
+        {% csrf_token %}
+        <div class="input_form">
+          <p class="input_task">{{ form.title }}</p>
+          <input type="submit" value="Create Task" class="input_btn" />
+        </div>
+      </form>
+      {% if tasks %} {% for task in tasks %}
+
+      <div class="task">
+        <a href="{% url 'update_task' task.id %}" class="update"> update</a>
+        <a href="{% url 'delete' task.id %}" class="delete">Delete</a>
+        <p class="task_title">{{ task.title }}</p>
+      </div>
+
+      {% endfor %} {% endif %}
+    </div>
+  </div>
+</div>

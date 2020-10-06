@@ -1,0 +1,10 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'register/login.css' %}" />
+<div class="form-group">
+  <div class="form-container">
+    <form action="" method="POST">
+      {% csrf_token %} {{ form }}
+      <input class="loginBtn" type="submit" value="Logout" />
+    </form>
+  </div>
+</div>

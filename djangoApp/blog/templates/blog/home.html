@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %} {% block content %}
+<h1>Blog Home | WELCOME!</h1>
+
+{% for item in posts %}
+<div class="article-container">
+  <article>
+    <div class="article-head">
+      <p>{{ item.author }}</p>
+      <p>{{ item.date_posted }}</p>
+    </div>
+    <h1>{{ item.title }}</h1>
+    <p>{{ item.content }}</p>
+  </article>
+</div>
+{% endfor %} {% endblock content %}
